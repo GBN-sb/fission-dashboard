@@ -29,3 +29,15 @@ export async function listFissionTriggersAllNamespaces() {
         return [];
     }
 }
+
+export async function listFissionEnvironmentsAllNamespaces() {
+    try {
+        const res = await fetch(`/k8s/apis/fission.io/v1/environments`);
+        if (!res.ok) return [];
+        const json = await res.json();
+        return json.items || [];
+    } catch (err) {
+        console.warn(`Failed to get functions`);
+        return [];
+    }
+}
