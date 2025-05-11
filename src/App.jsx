@@ -6,9 +6,11 @@ import TriggersPage from "./pages/TriggersPage";
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="flex">
-        <Sidebar />
-        <div className="flex-1 p-6 bg-gray-100 min-h-screen overflow-auto">
+      <div className="flex min-h-screen w-full">
+        <div className="w-64 bg-white border-r">
+          <Sidebar />
+        </div>
+        <div className="flex-1 bg-gray-100 p-6 overflow-auto w-full">
           <Routes>
             <Route path="/" element={<Navigate to="/functions" replace />} />
             <Route path="/functions" element={<FunctionsPage />} />
